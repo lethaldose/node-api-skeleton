@@ -1,0 +1,4 @@
+npm i --save body-parser express
+
+npm i -save-dev @types/body-parser @types/dotenv @types/express @types/supertest @typescript-eslint/eslint-plugin @typescript-eslint/parser dotenv eslint eslint-config-prettier eslint-plugin-prettier nodemon prettier supertest ts-node tsconfig-paths typescript jest ts-jest @types/jest
+
