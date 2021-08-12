@@ -5,7 +5,8 @@ npm i -save-dev @types/body-parser @types/dotenv @types/express @types/supertest
 pending
 =========
 
-morgan logger
+logger
+logging with request id
 routing
 middleware
 schema validation
