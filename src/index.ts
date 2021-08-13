@@ -14,11 +14,11 @@ const startServer = () => {
   }
 };
 
-process.on("unhandledRejection", (err) => {
+process.on('unhandledRejection', (err) => {
   throw err;
 });
 
-process.on("uncaughtException", (err) => {
+process.on('uncaughtException', (err) => {
   handleFinalError(err);
 });
 
