@@ -15,7 +15,6 @@
     "build": "tsc",
     "dev": "nodemon",
     "start": "npm run build && node build/index.js",
-    "format": "prettier --write \"src/**/*.ts\" ",
     "lint": "eslint --ext .ts ./src",
     "lint:fix": "eslint --ext .ts ./src --fix",
     "prettier": "prettier --check src/**/*.ts",

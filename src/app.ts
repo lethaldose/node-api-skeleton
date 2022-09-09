@@ -6,7 +6,7 @@ import { customerRouter } from './customer/customer-controller.js';
 import errorHandlerMiddleware from './middleware/error-handler.js';
 
 export const getApp = () => {
-  const app:Express = express();
+  const app: Express = express();
   app.use(helmet());
   app.use(cors());
   app.use(express.urlencoded({ extended: false }));
