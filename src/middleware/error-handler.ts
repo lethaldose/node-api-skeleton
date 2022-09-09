@@ -1,5 +1,5 @@
 import { NextFunction, Request, Response } from 'express';
-import HttpException from '../errors/http-exception';
+import HttpException from '../errors/http-exception.js';
 
 function errorHandlerMiddleware(error: HttpException, request: Request, response: Response, next: NextFunction) {
   if (!error) {

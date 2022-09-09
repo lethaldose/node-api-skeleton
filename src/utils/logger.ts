@@ -1,15 +1,9 @@
-import pino from 'pino';
-import { LOG_LEVEL, isProduction } from '../configuration';
+import { pinoHttp } from 'pino-http';
+import { LOG_LEVEL, isProduction } from '../configuration/index.js';
 
-const logger = pino({
-  level: LOG_LEVEL,
-  prettyPrint: !isProduction,
+const httpLogger = pinoHttp({
+  level: 'debug',
 });
+const logger = httpLogger.logger;
 
-const handleFinalError = pino.final(logger, (err, finalLogger) => {
-  finalLogger.fatal(err);
-  process.exitCode = 1;
-  process.kill(process.pid, 'SIGTERM');
-});
-
-export { logger, handleFinalError };
+export { httpLogger, logger };

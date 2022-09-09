@@ -1,20 +1,19 @@
-import express from 'express';
+import express, { Express, Request, Response } from 'express';
 import cors from 'cors';
 import helmet from 'helmet';
-import pinoHttp from 'pino-http';
-import { logger } from './utils/logger';
-import { customerRouter } from './customer/customer-controller';
-import errorHandlerMiddleware from './middleware/error-handler';
+import { httpLogger } from './utils/logger.js';
+import { customerRouter } from './customer/customer-controller.js';
+import errorHandlerMiddleware from './middleware/error-handler.js';
 
 export const getApp = () => {
-  const app = express();
+  const app:Express = express();
   app.use(helmet());
   app.use(cors());
   app.use(express.urlencoded({ extended: false }));
   app.use(express.json());
-  app.use(pinoHttp({ logger }));
+  app.use(httpLogger);
 
-  app.get('/api/v1/health-check', (_, res) => {
+  app.get('/api/v1/health-check', (_: Request, res: Response) => {
     res.json({ ok: true });
   });
 

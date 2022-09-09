@@ -1,6 +1,6 @@
 import { nanoid } from 'nanoid';
 
-import type { Customer, CustomerSignupPayload } from './types';
+import type { Customer, CustomerSignupPayload } from './types.js';
 
 class CustomerService {
   signup({ name, email }: CustomerSignupPayload): Customer {

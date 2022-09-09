@@ -1,6 +1,6 @@
-import { PORT, NODE_ENV } from 'src/configuration';
-import { getApp } from 'src/app';
-import { logger, handleFinalError } from 'src/utils/logger';
+import { PORT, NODE_ENV } from './configuration/index.js';
+import { getApp } from './app.js';
+import { logger } from './utils/logger.js';
 
 const startServer = () => {
   try {
@@ -19,7 +19,8 @@ process.on('unhandledRejection', (err) => {
 });
 
 process.on('uncaughtException', (err) => {
-  handleFinalError(err);
+  logger.error(err);
+  process.exit(1);
 });
 
 startServer();
